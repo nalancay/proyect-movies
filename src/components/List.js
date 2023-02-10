@@ -1,16 +1,19 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import CardMovie from "./Movie";
 
 const List = () => {
-  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token === null) {
-      navigate("/");
-    }
-  });
-  return <div>List</div>;
+  return (
+    <>
+      {!token && <Navigate to="/" />}
+      <div className="row">
+        <div className="col-3" style={{ border: "1 solid red" }}>
+          <CardMovie />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default List;

@@ -1,5 +1,5 @@
 import sweetAlert from "@sweetalert/with-react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Account from "../api/account";
 
 async function validateForm(email, password, navigate) {
@@ -30,6 +30,7 @@ async function validateForm(email, password, navigate) {
 
 function Login() {
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -42,18 +43,23 @@ function Login() {
 
   return (
     <>
-      <h2>Formulario de Login</h2>
-      <form onSubmit={submitHandler}>
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" />
-        </label>
-        <label>
-          <span>Password</span>
-          <input type="password" name="password" />
-        </label>
-        <button type="submit"> Ingresar</button>
-      </form>
+      {token && <Navigate to="/list" />}
+      <div className="row">
+        <div className="col-6 offset-3">
+          <h2>Formulario de Login</h2>
+          <form onSubmit={submitHandler}>
+            <label className="form-label d-block mt-2">
+              <span>Email</span>
+              <input className="form-control" type="email" name="email" />
+            </label>
+            <label className="form-label d-block mt-2">
+              <span>Password</span>
+              <input className="form-control" type="password" name="password" />
+            </label>
+            <button type="submit"> Ingresar</button>
+          </form>
+        </div>
+      </div>
     </>
   );
 }
