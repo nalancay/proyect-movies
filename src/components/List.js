@@ -1,16 +1,22 @@
 import { Navigate } from "react-router-dom";
-import CardMovie from "./Movie";
+import CardMovie from "./CardMovie";
+import ApiMovies from "../api/movies";
+import { useFetchList } from "../hooks/useFetchList";
 
 const List = () => {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
+  const { entities: movieList, isLoading } = useFetchList({
+    fetchDataFunction: ApiMovies.getMovies,
+  });
 
   return (
     <>
       {!token && <Navigate to="/" />}
+      {isLoading && <p>Cargando...</p>}
       <div className="row">
-        <div className="col-3" style={{ border: "1 solid red" }}>
-          <CardMovie />
-        </div>
+        {movieList.map((movie) => (
+          <CardMovie key={movie.id} movie={movie} />
+        ))}
       </div>
     </>
   );

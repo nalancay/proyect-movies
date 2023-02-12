@@ -1,6 +1,6 @@
 import sweetAlert from "@sweetalert/with-react";
 import { Navigate, useNavigate } from "react-router-dom";
-import Account from "../api/account";
+import ApiAccount from "../api/account";
 
 async function validateForm(email, password, navigate) {
   const regexEmail =
@@ -21,16 +21,16 @@ async function validateForm(email, password, navigate) {
     return;
   }
 
-  const { token } = await Account.postUserInfo(email, password);
+  const { token } = await ApiAccount.postUserInfo(email, password);
   if (token !== null) {
-    localStorage.setItem("token", token);
+    sessionStorage.setItem("token", token);
     navigate("/list");
   }
 }
 
 function Login() {
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -56,7 +56,10 @@ function Login() {
               <span>Password</span>
               <input className="form-control" type="password" name="password" />
             </label>
-            <button type="submit"> Ingresar</button>
+            <button className="btn btn-success mt-2" type="submit">
+              {" "}
+              Ingresar
+            </button>
           </form>
         </div>
       </div>
