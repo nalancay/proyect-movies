@@ -11,7 +11,6 @@ export const MovieDetail = () => {
   });
 
   const { movie, isLoading } = useFetchMovie({ movie_id: idMovieInQuery });
-  //const { title, poster_path } = movie;
 
   return (
     <>
@@ -19,7 +18,7 @@ export const MovieDetail = () => {
       {isLoading && <p>Cargando...</p>}
       {movie && (
         <>
-          <h5>{movie.title}</h5>
+          <h2>Titulo: {movie.title}</h2>
           <div className="row">
             <div className="col-4">
               <img

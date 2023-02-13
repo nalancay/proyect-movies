@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import swAlert from "@sweetalert/with-react";
 
-export const useFetchList = ({ fetchDataFunction = () => {} }) => {
+export const useFetchList = ({
+  fetchDataFunction = () => {},
+  keyword = "",
+}) => {
   const [isLoading, setLoading] = useState(false);
   const [entities, setEntities] = useState([]);
 
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
-      fetchDataFunction()
+      fetchDataFunction(keyword)
         .then((res) => {
           const apiData = res.results;
           setEntities(apiData);
@@ -19,7 +22,7 @@ export const useFetchList = ({ fetchDataFunction = () => {} }) => {
           swAlert(<h2>Hubo un error </h2>);
         });
     }, 1000);
-  }, [fetchDataFunction]);
+  }, [fetchDataFunction, keyword]);
 
   return { entities, isLoading };
 };

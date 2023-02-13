@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const CardMovie = ({ movie }) => {
   const { id: movieID, title, overview, poster_path } = movie;
   return (
-    <div className="col-3">
+    <div className="col-2">
       <div className="card my-3">
         <img
           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}

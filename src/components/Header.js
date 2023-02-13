@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Search from "./Search";
 export const Header = () => {
   return (
     <header>
@@ -19,15 +20,20 @@ export const Header = () => {
             <span className="navbar-toggle-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="nabar-nav">
+            <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/">Home</Link>
+                <Link className="nav-link" to="/">
+                  Home
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/list">List</Link>
+                <Link className="nav-link" to="/list">
+                  List
+                </Link>
               </li>
             </ul>
           </div>
+          <Search />
         </div>
       </nav>
     </header>

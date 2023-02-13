@@ -16,4 +16,11 @@ export default class Movies {
     const response = await axios.get(urlEndpoint);
     return response.data;
   }
+
+  static async getSearchMovies(keyword) {
+    const urlEndpoint = `https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&language=es-ES&query=${keyword}`;
+
+    const response = await axios.get(urlEndpoint);
+    return response.data;
+  }
 }
