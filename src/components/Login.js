@@ -2,7 +2,7 @@ import sweetAlert from "@sweetalert/with-react";
 import { Navigate, useNavigate } from "react-router-dom";
 import ApiAccount from "../api/account";
 
-async function validateForm(email, password, navigate) {
+async function validateForm(email, password, navigate, setToken) {
   const regexEmail =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
@@ -24,11 +24,13 @@ async function validateForm(email, password, navigate) {
   const { token } = await ApiAccount.postUserInfo(email, password);
   if (token !== null) {
     sessionStorage.setItem("token", token);
+    const tokenSessionStorage = sessionStorage.getItem("token");
+    setToken(tokenSessionStorage);
     navigate("/list");
   }
 }
 
-function Login() {
+function Login({ setToken }) {
   const navigate = useNavigate();
   const token = sessionStorage.getItem("token");
 
@@ -38,15 +40,15 @@ function Login() {
     const emailValue = email.value;
     const passwordValue = password.value;
 
-    validateForm(emailValue, passwordValue, navigate);
+    validateForm(emailValue, passwordValue, navigate, setToken);
   };
 
   return (
     <>
       {token && <Navigate to="/list" />}
-      <div className="row">
+      <div className="row d-block align-items-center">
+        <span>Mantente al dia en el mundo de las peliculas</span>
         <div className="col-6 offset-3">
-          <h2>Formulario de Login</h2>
           <form onSubmit={submitHandler}>
             <label className="form-label d-block mt-2">
               <span>Email</span>
@@ -57,7 +59,6 @@ function Login() {
               <input className="form-control" type="password" name="password" />
             </label>
             <button className="btn btn-success mt-2" type="submit">
-              {" "}
               Ingresar
             </button>
           </form>

@@ -3,7 +3,9 @@ import { useUrlParams } from "../hooks/useValueUrlParams";
 import ApiMovies from "../api/movies";
 import CardMovie from "./CardMovie";
 
-const RenderEmptyMessage = () => <p>No se encontraron datos</p>;
+const RenderEmptyMessage = () => (
+  <div className="col-12 text-danger">No se encontraron resultados</div>
+);
 
 const ResultsMovies = () => {
   const { valueQuery: keyword } = useUrlParams({
@@ -15,22 +17,18 @@ const ResultsMovies = () => {
     fetchDataFunction: ApiMovies.getSearchMovies,
     keyword,
   });
-  console.log("moviesResult", moviesResult);
 
   return (
     <>
-      {isLoading && <p>Cargando...</p>}
+      {isLoading ? <p>Cargando...</p> : <h5>Buscaste: {keyword}</h5>}
       {!isLoading && moviesResult.length === 0 ? (
         <RenderEmptyMessage />
       ) : (
-        <>
-          <h5>Buscaste: {keyword}</h5>
-          <div className="row">
-            {moviesResult.map((movie) => (
-              <CardMovie key={movie.id} movie={movie} />
-            ))}
-          </div>
-        </>
+        <div className="row">
+          {moviesResult.map((movie) => (
+            <CardMovie key={movie.id} movie={movie} />
+          ))}
+        </div>
       )}
     </>
   );

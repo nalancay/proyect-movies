@@ -3,7 +3,7 @@ import CardMovie from "./CardMovie";
 import ApiMovies from "../api/movies";
 import { useFetchList } from "../hooks/useFetchList";
 
-const List = () => {
+const List = ({ addOrRemoveFavs = () => {} }) => {
   const token = sessionStorage.getItem("token");
   const { entities: movieList, isLoading } = useFetchList({
     fetchDataFunction: ApiMovies.getMovies,
@@ -15,7 +15,11 @@ const List = () => {
       {isLoading && <p>Cargando...</p>}
       <div className="row">
         {movieList.map((movie) => (
-          <CardMovie key={movie.id} movie={movie} />
+          <CardMovie
+            key={movie.id}
+            movie={movie}
+            addOrRemoveFavs={addOrRemoveFavs}
+          />
         ))}
       </div>
     </>
