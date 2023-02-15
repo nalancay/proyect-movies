@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+**Note: The readme is in English and Spanish **
+**Nota: El readme esta en ingles y español **
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Technical project for film application
 
-## Available Scripts
+This project was built with create-react-app, to demonstrate technical skills using react, javascript, html, css, bootstrap, context concepts, custom hooks, react router, using localstorage, sessionStorage, the token utility in the account login, communication of components through props, consumption of api, reuse of components, PropTypes to ensure that the value passed is of the correct data type and structure of the project in modules.
 
-In the project directory, you can run:
+## Functionality of the application
 
-### `npm start`
+### `Login`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The login assembly was implemented with validation of the form and persistence of the token in the browser's local storage using sessionStorage to ensure that closing the browser tab closed the user's login.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Navigation`
 
-### `npm test`
+Redirect between different views using react-router-dom library taking into account the concept of react in relation to single-page application to avoid page reloads and keep it on a single page when browsing the website.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Token Importance`
 
-### `npm run build`
+Token check for the protection of our routes when account authentication is required when accessing application features.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `URL query string`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Capture information that travels in the URL query string through the URLSearchParams javascrit object in order to show results in a search and call an api with keyword that comes in the url.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Favorites in localstorage`
 
-### `npm run eject`
+Add and remove items in localstorage for favorites functionality.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `Multiple languages`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Mechanism to choose language between Spanish and English on the website. In this part, the concept of context was used to store a global state of the language in localstorage, so that it can be used anywhere without losing its translation.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Proyecto tecnico de aplicacion de peliculas
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Este proyecto se creo con create-react-app, para poner de manifiesto habilidades tecnicas utilizando react, javascript, html, css, bootstrap, conceptos de context, custom hooks, react router, utilización de localstorage, sessionStorage, la utilidad de token en el logeo de cuenta, comunicación de componentes a traves de props, consumo de api, reutilizacion de compoentes,PropTypes para asegurar que el valor pasado sea del tipo de datos correcto y estructura del proyecto en modulos.
 
-## Learn More
+## Funcionalidade de la aplicacion
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `Login`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+El armado de login se implemento con validación del formulario y persistencia del token en el almacenamiento local del navegador utilizando sessionStorage para garantizar que al cerrar pestaña del navegador se cerro el logeo del usuario.
 
-### Code Splitting
+### `Navegación`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Redireccionar entre diferentes vistas utilizando librería react-router-dom teniendo en cuenta el concepto de react en relacion a single-page application para evitar recargar pagina y mantenerlo en una sola pagina al navegar en el sitio web.
 
-### Analyzing the Bundle Size
+### `Importancia del token`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Chequeo del token para la protección de nuestras rutas cuando requiere autenticación de la cuenta al acceder a funcionalidades de la aplicación.
 
-### Making a Progressive Web App
+### `Query string de la URL`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Capturar información que viaja en el query string de la URL a traves del objeto de javascrit URLSearchParams con el fin de mostrar resultados en una búsqueda y llamada a una api con palabra clave que viene en la url.
 
-### Advanced Configuration
+### `Favoritos en localstorage`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Agregar y eliminar items en localstorage para la funcionalidad de favoritos.
 
-### Deployment
+### `Multiples lenguajes`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Mecanismo para elegir lenguaje entre español e ingles en sitio web. En esta parte se utilizo concepto de context para almacenar un estado global del lenguaje en localstorage, de manera que esta pueda utilizarse en cualquier parte sin perder la traducción de la misma.
