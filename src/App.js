@@ -54,7 +54,7 @@ function App() {
 
   return (
     <>
-      <Header favorites={favorites} token={token} />
+      <Header favorites={favorites} token={token} setToken={setToken} />
       <div className="container mt-3">
         <Routes>
           <Route path="/" element={<Login setToken={setToken} />} />

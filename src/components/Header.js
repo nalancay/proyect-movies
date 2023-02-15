@@ -4,9 +4,14 @@ import { Link } from "react-router-dom";
 import Search from "./Search";
 import { LangContext } from "../langContext/langContex";
 
-export const Header = ({ favorites, token }) => {
+export const Header = ({ favorites, token, setToken }) => {
   const lang = useContext(LangContext);
   const pathUrl = token ? "/list/" : "/";
+
+  const logout = () => {
+    sessionStorage.clear();
+    setToken(null);
+  };
 
   return (
     <header>
@@ -44,7 +49,7 @@ export const Header = ({ favorites, token }) => {
                 </ul>
               </div>
               <Search />
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/" onClick={logout}>
                 <FormattedMessage id="header.logout.text" />
               </Link>
             </>
