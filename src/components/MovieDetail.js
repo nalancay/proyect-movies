@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
 import { useFetchMovie } from "../hooks/useFetchMovie";
 import { useUrlParams } from "../hooks/useValueUrlParams";
@@ -15,10 +16,16 @@ export const MovieDetail = () => {
   return (
     <>
       {!token && <Navigate to="/" />}
-      {isLoading && <p>Cargando...</p>}
+      {isLoading && (
+        <p>
+          <FormattedMessage id="body.loadingMessage" />
+        </p>
+      )}
       {movie && (
         <>
-          <h2>Titulo: {movie.title}</h2>
+          <h2>
+            <FormattedMessage id="body.movieDetail.title" /> {movie.title}
+          </h2>
           <div className="row">
             <div className="col-4">
               <img
@@ -28,11 +35,21 @@ export const MovieDetail = () => {
               />
             </div>
             <div className="col-8">
-              <h5>Fecha de estreno: {movie.release_date}</h5>
-              <h5>Reseña:</h5>
+              <h5>
+                <FormattedMessage id="body.movieDetail.ReleaseDate" />
+                {movie.release_date}
+              </h5>
+              <h5>
+                <FormattedMessage id="body.movieDetail.review" />
+              </h5>
               <p>{movie.overview}</p>
-              <h5>Rating: {Math.round(movie.vote_average)}</h5>
-              <h5>Generos:</h5>
+              <h5>
+                <FormattedMessage id="body.movieDetail.rating" />
+                {Math.round(movie.vote_average)}
+              </h5>
+              <h5>
+                <FormattedMessage id="body.movieDetail.genders" />
+              </h5>
               <ul>
                 {movie.genres.map((movieGenre) => (
                   <li key={movieGenre.id}>{movieGenre.name}</li>

@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
 import CardMovie from "./CardMovie";
 
@@ -6,10 +7,14 @@ const Favorites = ({ addOrRemoveFavs = () => {}, favorites = [] }) => {
   return (
     <>
       {!token && <Navigate to="/" />}
-      <h2>Mis favoritos</h2>
+      <h2>
+        <FormattedMessage id="body.title.MyFavourites" />
+      </h2>
       <div className="row">
         {!favorites.length && (
-          <div className="col-12 text-danger">No tienes nada en favoritos</div>
+          <div className="col-12 text-danger">
+            <FormattedMessage id="body.messageMyFavourites" />
+          </div>
         )}
         {favorites.map((favMovie) => {
           return (

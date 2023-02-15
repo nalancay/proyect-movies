@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 
 const CardMovie = ({ addOrRemoveFavs, movie = {} }) => {
@@ -31,7 +32,7 @@ const CardMovie = ({ addOrRemoveFavs, movie = {} }) => {
           <h5 className="card-title">{title.substring(0, 15)}...</h5>
           <p className="card-text">{overview.substring(0, 30)}...</p>
           <Link to={`/detail?movieID=${movieID}`} className="btn btn-primary">
-            View detail
+            <FormattedMessage id="body.movieDetail.viewDetail" />
           </Link>
         </div>
       </div>
