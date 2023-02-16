@@ -1,6 +1,14 @@
 **Note: The readme is in English and Spanish **
 **Nota: El readme esta en ingles y español **
 
+### `WebSite`
+Si desea probar aplicacion ingrese a la siguiente info: 
+If you want to test the application enter the following information:
+
+url webSite: https://movies-nalancay.netlify.app/
+user: test@gmail.com
+password:test
+
 # Technical project for film application
 
 This project was built with create-react-app, to demonstrate technical skills using react, javascript, html, css, bootstrap, context concepts, custom hooks, react router, using localstorage, sessionStorage, the token utility in the account login, communication of components through props, consumption of api, reuse of components, propTypes to ensure that the value passed is of the correct data type and structure of the project in modules.
