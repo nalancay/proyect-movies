@@ -1,13 +1,6 @@
 **Note: The readme is in English and Spanish **
 **Nota: El readme esta en ingles y español **
 
-### `url webSite:`
- https://movies-nalancay.netlify.app/
- 
- ![image](https://user-images.githubusercontent.com/113408244/219477605-9d16648b-755f-46f9-8457-513f09d94fd7.png)
-
-![image](https://user-images.githubusercontent.com/113408244/219477902-70fb4570-1616-4402-b060-e4342e2cd6c3.png)
-
 # Technical project for film application
 
 This project was built with create-react-app, to demonstrate technical skills using react, javascript, html, css, bootstrap, context concepts, custom hooks, react router, using localstorage, sessionStorage, the token utility in the account login, communication of components through props, consumption of api, reuse of components, propTypes to ensure that the value passed is of the correct data type and structure of the project in modules.
@@ -75,3 +68,10 @@ Mecanismo para elegir lenguaje entre español e ingles en sitio web. En esta par
 ### `Interfaces Responsivas`
 
 Sitio web responsivo en interfaces desktop y mobile.
+
+### `url webSite:`
+ https://movies-nalancay.netlify.app/
+ 
+ ![image](https://user-images.githubusercontent.com/113408244/219477605-9d16648b-755f-46f9-8457-513f09d94fd7.png)
+
+![image](https://user-images.githubusercontent.com/113408244/219477902-70fb4570-1616-4402-b060-e4342e2cd6c3.png)
