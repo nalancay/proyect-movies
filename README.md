@@ -31,6 +31,10 @@ Add and remove items in localstorage for favorites functionality.
 
 Mechanism to choose language between Spanish and English on the website. In this part, the concept of context was used to store a global state of the language in localstorage, so that it can be used anywhere without losing its translation.
 
+### `Responsive Interfaces`
+
+Responsive website on desktop and mobile interfaces.
+
 # Proyecto tecnico de aplicacion de peliculas
 
 Este proyecto se creo con create-react-app, para poner de manifiesto habilidades tecnicas utilizando react, javascript, html, css, bootstrap, conceptos de context, custom hooks, react router, utilización de localstorage, sessionStorage, la utilidad de token en el logeo de cuenta, comunicación de componentes a traves de props, consumo de api, reutilizacion de compoentes,propTypes para asegurar que el valor pasado sea del tipo de datos correcto y estructura del proyecto en modulos.
@@ -60,3 +64,7 @@ Agregar y eliminar items en localstorage para la funcionalidad de favoritos.
 ### `Multiples lenguajes`
 
 Mecanismo para elegir lenguaje entre español e ingles en sitio web. En esta parte se utilizo concepto de context para almacenar un estado global del lenguaje en localstorage, de manera que esta pueda utilizarse en cualquier parte sin perder la traducción de la misma.
+
+### `Interfaces Responsivas`
+
+Sitio web responsivo en interfaces desktop y mobile.

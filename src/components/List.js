@@ -19,7 +19,7 @@ const List = ({ addOrRemoveFavs = () => {} }) => {
           <FormattedMessage id="body.loadingMessage" />
         </p>
       )}
-      <div className="row">
+      <div className="col-12 pb-5 row">
         {movieList.map((movie) => (
           <CardMovie
             key={movie.id}

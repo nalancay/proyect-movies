@@ -1,4 +1,7 @@
 import PropTypes from "prop-types";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import { useContext } from "react";
 import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
@@ -16,28 +19,32 @@ export const Header = ({ favorites, token, setToken }) => {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container">
+      <Navbar expand="lg" style={{ background: "#EBDEF0" }}>
+        <Container fluid>
           {!token ? (
-            <h4 className="text-success">
+            <Navbar.Brand>
               <FormattedMessage id="header.login.text" />
-            </h4>
+            </Navbar.Brand>
           ) : (
             <>
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/list">
+              <Navbar.Toggle aria-controls="navbarScroll" />
+              <Navbar.Collapse id="navbarScroll">
+                <Nav
+                  className="me-auto my-2 my-lg-0"
+                  style={{ maxHeight: "100px" }}
+                  navbarScroll
+                >
+                  <Nav.Link>
+                    <Link className="nav-link " to="/list">
                       <FormattedMessage id="header.movies.text" />
                     </Link>
-                  </li>
-                  <li className="nav-item">
+                  </Nav.Link>
+                  <Nav.Link>
                     <Link className="nav-link" to="/favorites">
                       <FormattedMessage id="header.favorites.text" />
                     </Link>
-                  </li>
-
-                  <li className="nav-item d-flex align-items-center">
+                  </Nav.Link>
+                  <Nav.Link disabled className="d-flex align-items-center">
                     <span className="text-success">
                       {favorites.length > 0 && (
                         <>
@@ -46,35 +53,38 @@ export const Header = ({ favorites, token, setToken }) => {
                         </>
                       )}
                     </span>
-                  </li>
-                </ul>
-              </div>
-              <Search />
-              <Link className="nav-link" to="/" onClick={logout}>
-                <FormattedMessage id="header.logout.text" />
-              </Link>
+                  </Nav.Link>
+                </Nav>
+                <Search />
+              </Navbar.Collapse>
             </>
           )}
 
           <div className="d-flex">
             <Link
-              className="text-light"
+              className="ml-4"
+              style={{ color: "#5B2C6F" }}
               to={`${pathUrl}?language=es-ES`}
               onClick={() => lang.setLang("es-ES")}
             >
               ESP
             </Link>
-            <span className="text-light pl-1 pr-1">/</span>
+            <span className="pl-1 pr-1">/</span>
             <Link
-              className="text-light"
               to={`${pathUrl}?language=en-US`}
               onClick={() => lang.setLang("en-US")}
+              style={{ color: "#5B2C6F" }}
             >
               ING
             </Link>
+            {token && (
+              <Link className="ml-4" to="/" onClick={logout}>
+                <FormattedMessage id="header.logout.text" />
+              </Link>
+            )}
           </div>
-        </div>
-      </nav>
+        </Container>
+      </Navbar>
     </header>
   );
 };

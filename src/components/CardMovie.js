@@ -7,8 +7,8 @@ const CardMovie = ({ addOrRemoveFavs, movie = {} }) => {
   const favoritesArray = localStorage.getItem("favoritesMovies") || [];
 
   return (
-    <div className="col-2">
-      <div className="card my-3">
+    <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div className="card">
         <img
           src={
             movie?.imgURL ?? `https://image.tmdb.org/t/p/w500/${poster_path}`
@@ -32,7 +32,10 @@ const CardMovie = ({ addOrRemoveFavs, movie = {} }) => {
         <div className="card-body">
           <h5 className="card-title">{title.substring(0, 15)}...</h5>
           <p className="card-text">{overview.substring(0, 30)}...</p>
-          <Link to={`/detail?movieID=${movieID}`} className="btn btn-primary">
+          <Link
+            to={`/detail?movieID=${movieID}`}
+            className="btn btn-primary btn-block"
+          >
             <FormattedMessage id="body.movieDetail.viewDetail" />
           </Link>
         </div>
