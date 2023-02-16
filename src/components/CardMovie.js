@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 
@@ -38,6 +39,11 @@ const CardMovie = ({ addOrRemoveFavs, movie = {} }) => {
       </div>
     </div>
   );
+};
+
+CardMovie.propTypes = {
+  addOrRemoveFavs: PropTypes.func,
+  movie: PropTypes.object.isRequired,
 };
 
 export default CardMovie;

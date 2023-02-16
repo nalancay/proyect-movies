@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import messageEN from "../lang/en-US.json";
 import messageES from "../lang/es-ES.json";
@@ -42,6 +43,10 @@ const LangProvider = ({ children }) => {
       </IntlProvider>
     </LangContext.Provider>
   );
+};
+
+LangProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export { LangProvider, LangContext };

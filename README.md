@@ -3,7 +3,7 @@
 
 # Technical project for film application
 
-This project was built with create-react-app, to demonstrate technical skills using react, javascript, html, css, bootstrap, context concepts, custom hooks, react router, using localstorage, sessionStorage, the token utility in the account login, communication of components through props, consumption of api, reuse of components, PropTypes to ensure that the value passed is of the correct data type and structure of the project in modules.
+This project was built with create-react-app, to demonstrate technical skills using react, javascript, html, css, bootstrap, context concepts, custom hooks, react router, using localstorage, sessionStorage, the token utility in the account login, communication of components through props, consumption of api, reuse of components, propTypes to ensure that the value passed is of the correct data type and structure of the project in modules.
 
 ## Functionality of the application
 
@@ -33,7 +33,7 @@ Mechanism to choose language between Spanish and English on the website. In this
 
 # Proyecto tecnico de aplicacion de peliculas
 
-Este proyecto se creo con create-react-app, para poner de manifiesto habilidades tecnicas utilizando react, javascript, html, css, bootstrap, conceptos de context, custom hooks, react router, utilización de localstorage, sessionStorage, la utilidad de token en el logeo de cuenta, comunicación de componentes a traves de props, consumo de api, reutilizacion de compoentes,PropTypes para asegurar que el valor pasado sea del tipo de datos correcto y estructura del proyecto en modulos.
+Este proyecto se creo con create-react-app, para poner de manifiesto habilidades tecnicas utilizando react, javascript, html, css, bootstrap, conceptos de context, custom hooks, react router, utilización de localstorage, sessionStorage, la utilidad de token en el logeo de cuenta, comunicación de componentes a traves de props, consumo de api, reutilizacion de compoentes,propTypes para asegurar que el valor pasado sea del tipo de datos correcto y estructura del proyecto en modulos.
 
 ## Funcionalidade de la aplicacion
 

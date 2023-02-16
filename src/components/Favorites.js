@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
 import CardMovie from "./CardMovie";
@@ -28,6 +29,11 @@ const Favorites = ({ addOrRemoveFavs = () => {}, favorites = [] }) => {
       </div>
     </>
   );
+};
+
+Favorites.propTypes = {
+  addOrRemoveFavs: PropTypes.func,
+  favorites: PropTypes.array,
 };
 
 export default Favorites;

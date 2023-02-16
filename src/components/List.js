@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Navigate } from "react-router-dom";
 import CardMovie from "./CardMovie";
 import ApiMovies from "../api/movies";
@@ -29,6 +30,10 @@ const List = ({ addOrRemoveFavs = () => {} }) => {
       </div>
     </>
   );
+};
+
+List.propTypes = {
+  addOrRemoveFavs: PropTypes.func,
 };
 
 export default List;

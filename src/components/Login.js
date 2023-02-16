@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { FormattedMessage, FormattedDate } from "react-intl";
 import sweetAlert from "@sweetalert/with-react";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -84,5 +85,9 @@ function Login({ setToken }) {
     </>
   );
 }
+
+Login.propTypes = {
+  setToken: PropTypes.func,
+};
 
 export default Login;

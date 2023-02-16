@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useContext } from "react";
 import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
@@ -76,4 +77,10 @@ export const Header = ({ favorites, token, setToken }) => {
       </nav>
     </header>
   );
+};
+
+Header.propTypes = {
+  favorites: PropTypes.array,
+  token: PropTypes.string,
+  setToken: PropTypes.func,
 };
