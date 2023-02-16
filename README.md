@@ -2,8 +2,7 @@
 **Nota: El readme esta en ingles y español **
 
 ### `WebSite`
-Si desea probar aplicacion ingrese a la siguiente info: 
-If you want to test the application enter the following information:
+Si desea probar aplicacion ingrese a la siguiente info (If you want to test the application enter the following information):
 
 url webSite: https://movies-nalancay.netlify.app/
 user: test@gmail.com
