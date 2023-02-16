@@ -3,6 +3,9 @@
 
 ### `url webSite:`
  https://movies-nalancay.netlify.app/
+ 
+ ![image](https://user-images.githubusercontent.com/113408244/219477605-9d16648b-755f-46f9-8457-513f09d94fd7.png)
+
 
 # Technical project for film application
 
