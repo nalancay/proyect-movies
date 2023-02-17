@@ -69,8 +69,7 @@ Mecanismo para elegir lenguaje entre español e ingles en sitio web. En esta par
 
 Sitio web responsivo en interfaces desktop y mobile.
 
-### `url webSite:`
- https://movies-nalancay.netlify.app/
+### `WebSite:`
  
  ![image](https://user-images.githubusercontent.com/113408244/219477605-9d16648b-755f-46f9-8457-513f09d94fd7.png)
 
