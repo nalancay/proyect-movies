@@ -18,12 +18,12 @@ async function validateForm(email, password, navigate, setToken) {
     return;
   }
 
-  if (email !== "test@gmail.com" || password !== "test") {
+  if (email !== "test@gmail.com" || password !== "react123") {
     sweetAlert("Credenciales invalidas");
     return;
   }
 
-  const { token } = await ApiAccount.postUserInfo(email, password);
+  const { token } = await ApiAccount.getTokenUser(email, password);
   if (token !== null) {
     sessionStorage.setItem("token", token);
     const tokenSessionStorage = sessionStorage.getItem("token");

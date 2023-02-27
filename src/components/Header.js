@@ -8,9 +8,19 @@ import { Link } from "react-router-dom";
 import Search from "./Search";
 import { LangContext } from "../langContext/langContex";
 
-export const Header = ({ favorites, token, setToken }) => {
+const styleButton = {
+  color: "#5B2C6F",
+  outline: "none",
+  border: 0,
+  background: "#EBDEF0",
+};
+
+export const Header = ({
+  favorites = [],
+  token = null,
+  setToken = () => {},
+}) => {
   const lang = useContext(LangContext);
-  const pathUrl = token ? "/list/" : "/";
 
   const logout = () => {
     sessionStorage.clear();
@@ -61,22 +71,17 @@ export const Header = ({ favorites, token, setToken }) => {
           )}
 
           <div className="d-flex">
-            <Link
+            <button
               className="ml-4"
-              style={{ color: "#5B2C6F" }}
-              to={`${pathUrl}?language=es-ES`}
+              style={styleButton}
               onClick={() => lang.setLang("es-ES")}
             >
               ESP
-            </Link>
+            </button>
             <span className="pl-1 pr-1">/</span>
-            <Link
-              to={`${pathUrl}?language=en-US`}
-              onClick={() => lang.setLang("en-US")}
-              style={{ color: "#5B2C6F" }}
-            >
+            <button onClick={() => lang.setLang("en-US")} style={styleButton}>
               ING
-            </Link>
+            </button>
             {token && (
               <Link className="ml-4" to="/" onClick={logout}>
                 <FormattedMessage id="header.logout.text" />

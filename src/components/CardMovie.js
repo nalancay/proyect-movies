@@ -21,6 +21,7 @@ const CardMovie = ({ addOrRemoveFavs, movie = {} }) => {
             className="favorite-btn"
             onClick={addOrRemoveFavs}
             data-movie-id={movieID}
+            data-testid={movieID}
           >
             {favoritesArray.includes(movieID) ? (
               <span>❤︎</span>

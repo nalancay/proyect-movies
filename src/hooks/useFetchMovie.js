@@ -1,19 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import swAlert from "@sweetalert/with-react";
 import ApiMovies from "../api/movies";
+import { LangContext } from "../langContext/langContex";
 
-async function fetchData(movie_id) {
-  const response = await ApiMovies.getMovieDetail(movie_id);
+async function fetchData({ language, movie_id }) {
+  const response = await ApiMovies.getMovieDetail({ language, movie_id });
   return response;
 }
 export const useFetchMovie = ({ movie_id }) => {
   const [isLoading, setLoading] = useState(false);
   const [movie, setMovie] = useState(null);
+  const lang = useContext(LangContext);
+  const language = lang?.language ?? "en-US";
 
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
-      fetchData(movie_id)
+      fetchData({ language, movie_id })
         .then((response) => {
           const movieData = response;
           setMovie(movieData);
@@ -24,7 +27,7 @@ export const useFetchMovie = ({ movie_id }) => {
           swAlert(<h2>Hubo un error </h2>);
         });
     }, 1000);
-  }, [movie_id]);
+  }, [movie_id, language]);
 
   return { movie, isLoading };
 };

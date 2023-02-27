@@ -36,6 +36,7 @@ const LangProvider = ({ children }) => {
     <LangContext.Provider
       value={{
         setLang,
+        language: lang,
       }}
     >
       <IntlProvider locale={locale} messages={message}>
